@@ -22,8 +22,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
 
-    - name: Check file changes and add reviewer
+    - name: Run the script
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
       run: |
-        print("hello")
+        python check_and_add_reviewer.py
