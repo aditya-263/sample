@@ -24,7 +24,7 @@ jobs:
 
     - name: Run the script
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}
         GITHUB_REPOSITORY: ${{ github.repository }}
         GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
       run: |

@@ -12,6 +12,7 @@ STRING_TO_CHECK = 'zzzzz'
 
 print("hellllooooooo")
 print(PR_NUMBER)
+print(GITHUB_TOKEN)
 # API headers
 headers = {
     'Authorization': f'token {GITHUB_TOKEN}',
@@ -22,6 +23,7 @@ headers = {
 changes_url = f"{GITHUB_API_URL}/repos/aditya-263/sample/pulls/{PR_NUMBER}/files"
 response = requests.get(changes_url, headers=headers)
 files = response.json()
+print(response)
 print(files)
 
 for file in files:
