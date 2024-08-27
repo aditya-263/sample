@@ -43,6 +43,7 @@ int SumOfKsubArray(int arr[], int N, int k)
 int main()
 {
     string kl ="zzzzz";
+    string kl2 ="zzzzz";
     int arr[] = { 2, 5, -1, 7, -3, -1, -2 };
     int N = sizeof(arr) / sizeof(arr[0]);
     int k = 4;
