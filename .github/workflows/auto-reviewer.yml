@@ -26,46 +26,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        import requests
-        import json
-
-        # Define variables
-        repo = "${{ github.repository }}"
-        pr_number = "${{ github.event.pull_request.number }}"
-        reviewer = "qqq@gmail.com"
-        file_to_check = "sw.cpp"
-        string_to_check = "zzzzz"
-        
-        # GitHub API URL
-        api_url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}"
-        changes_url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/files"
-
-        # Check the list of changed files
-        headers = {
-            "Authorization": f"token {os.getenv('GITHUB_TOKEN')}",
-            "Accept": "application/vnd.github.v3+json",
-        }
-        response = requests.get(changes_url, headers=headers)
-        changed_files = response.json()
-
-        # Check if 'abc.cpp' is among the changed files
-        file_changed = any(file['filename'] == file_to_check for file in changed_files)
-        if file_changed:
-            # Check if the string 'zzzzz' is present in the file
-            file_url = f"https://raw.githubusercontent.com/{repo}/main/{file_to_check}"
-            file_content = requests.get(file_url).text
-            if string_to_check in file_content:
-                # Add reviewer if conditions are met
-                pr_data = {
-                    "reviewers": [{"reviewer": reviewer}]
-                }
-                add_reviewer_url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/requested_reviewers"
-                response = requests.post(add_reviewer_url, headers=headers, data=json.dumps(pr_data))
-                if response.status_code == 201:
-                    print(f"Successfully added reviewer {reviewer} to PR #{pr_number}.")
-                else:
-                    print(f"Failed to add reviewer. Status code: {response.status_code}")
-            else:
-                print(f"String '{string_to_check}' not found in {file_to_check}.")
-        else:
-            print(f"{file_to_check} was not changed in the PR.")
+        print("hello")
