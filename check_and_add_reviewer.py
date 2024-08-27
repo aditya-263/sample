@@ -17,7 +17,7 @@ headers = {
 }
 
 # Get list of changed files in the pull request
-changes_url = f"{GITHUB_API_URL}/repos/{REPO}/pulls/{PR_NUMBER}/files"
+changes_url = f"{GITHUB_API_URL}/repos/aditya-263/sample/pulls/{PR_NUMBER}/files"
 response = requests.get(changes_url, headers=headers)
 files = response.json()
 
