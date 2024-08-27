@@ -17,12 +17,12 @@ headers = {
     'Authorization': f'token {GITHUB_TOKEN}',
     'Accept': 'application/vnd.github.v3+json'
 }
-
+# https://api.github.com/repos/aditya-263/sample/pulls/1/files
 # Get list of changed files in the pull request
 changes_url = f"{GITHUB_API_URL}/repos/aditya-263/sample/pulls/{PR_NUMBER}/files"
 response = requests.get(changes_url, headers=headers)
 files = response.json()
-
+print(files)
 
 for file in files:
     print(file)
