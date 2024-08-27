@@ -26,6 +26,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        #!/usr/bin/env python3
         import requests
         import json
 
