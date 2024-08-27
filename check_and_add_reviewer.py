@@ -10,6 +10,7 @@ REVIEWER_USERNAME = 'aditya-263'  # Replace with the GitHub username of the revi
 FILE_TO_CHECK = 'sw.cpp'
 STRING_TO_CHECK = 'zzzzz'
 
+print("hellllooooooo")
 # API headers
 headers = {
     'Authorization': f'token {GITHUB_TOKEN}',
