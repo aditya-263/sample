@@ -26,6 +26,10 @@ print(files)
 
 for file in files:
     print(file)
+
+
+
+print("hellllooooooo2")
 # Check if the specific file is among the changed files
 # file_changed = any(file['filename'] == FILE_TO_CHECK for file in files)
 
