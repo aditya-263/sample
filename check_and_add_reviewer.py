@@ -11,6 +11,7 @@ FILE_TO_CHECK = 'sw.cpp'
 STRING_TO_CHECK = 'zzzzz'
 
 print("hellllooooooo")
+print(PR_NUMBER)
 # API headers
 headers = {
     'Authorization': f'token {GITHUB_TOKEN}',
