@@ -1,0 +1,23 @@
+name: Run Python Script on Push
+
+on:
+  push:
+    branches:
+      - '**'  # Triggers on push to any branch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Specify the version of Python you want to use
+
+      - name: Run Python script
+        run: |
+          python print_hello.py
