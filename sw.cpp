@@ -42,7 +42,7 @@ int SumOfKsubArray(int arr[], int N, int k)
 // Driver program to test above functions
 int main()
 {
-    string kl ="zzzzz";
+    
     int arr[] = { 2, 5, -1, 7, -3, -1, -2 };
     int N = sizeof(arr) / sizeof(arr[0]);
     int k = 4;
